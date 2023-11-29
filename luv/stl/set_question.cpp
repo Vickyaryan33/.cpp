@@ -18,9 +18,13 @@ int main() {
     st.insert(s); //O(log(n))
   }
   auto it=st.find("faed");//O(log(n))
+  if(it!=st.end()) //check lga do for better code
+  {
   cout<<(*it)<<endl;
   st.erase(it);
+  }
   st.erase("faed");
+ 
   print(st);
   return 0;
 }
