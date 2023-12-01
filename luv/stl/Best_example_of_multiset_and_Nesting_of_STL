@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	int n;cin>>n;
+  // map<int , set<string>>mp; // I cant use set beacuse if marks is same and name is also same then set is ignore same name but i want to print these name also so that we must take multiset just like input is give below.
+	map<int , multiset<string>>mp;
+	for(int i=0;i<n;i++){
+     string s;cin>>s;
+	   int m;cin>>m;
+	   mp[m].insert(s);
+	  }
+    auto cur_it=--mp.end();
+    while(true){
+      auto &students=(*cur_it).second;
+      auto &marks=(*cur_it).first;
+      for(auto &student : students){
+        cout<<student<<" "<<marks<<endl;
+      }
+      if(cur_it==mp.begin()) break;
+      else cur_it--;
+    }
+
+}
+// i/p:-
+// 4
+// Eve 78
+// Bob 99
+// Alice 78
+// Alice 78
