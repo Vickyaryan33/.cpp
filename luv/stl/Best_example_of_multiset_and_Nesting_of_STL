@@ -3,13 +3,13 @@ using namespace std;
 int main() {
 	int n;cin>>n;
   // map<int , set<string>>mp; // I cant use set beacuse if marks is same and name is also same then set is ignore same name but i want to print these name also so that we must take multiset just like input is give below.
-	map<int , multiset<string>>mp;
+	map<int,multiset<string>>mp;// marks ke corresponding student ko dal diya
 	for(int i=0;i<n;i++){
      string s;cin>>s;
 	   int m;cin>>m;
 	   mp[m].insert(s);
 	  }
-    auto cur_it=--mp.end();
+    auto cur_it=--mp.end();// last element ko access kiya
     while(true){
       auto &students=(*cur_it).second;
       auto &marks=(*cur_it).first;
